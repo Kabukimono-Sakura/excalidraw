@@ -365,6 +365,20 @@ const renderBindingHighlightForBindableElement_simple = (
           }
 
           break;
+        case "cloud":
+          context.beginPath();
+          context.ellipse(
+            suggestedBinding.element.width / 2,
+            suggestedBinding.element.height / 2,
+            suggestedBinding.element.width / 2,
+            suggestedBinding.element.height / 2,
+            0,
+            0,
+            2 * Math.PI,
+          );
+          context.closePath();
+          context.stroke();
+          break;
         default:
           {
             const [segments, curves] = deconstructRectanguloidElement(
@@ -706,6 +720,20 @@ const renderBindingHighlightForBindableElement_complex = (
             });
           }
 
+          break;
+        case "cloud":
+          context.beginPath();
+          context.ellipse(
+            (element.width + offset * 2) / 2,
+            (element.height + offset * 2) / 2,
+            (element.width + offset * 2) / 2,
+            (element.height + offset * 2) / 2,
+            0,
+            0,
+            2 * Math.PI,
+          );
+          context.closePath();
+          context.stroke();
           break;
         default:
           {
